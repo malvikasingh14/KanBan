@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
-}
+/* Add your styles here */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Basic styles for demonstration */
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #333;
+}
+body {
+  background-color: #f5f5f5; /* Slightly greyish background color for the entire page */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #333;
   color: white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  background-color: #f9f9f9;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: #ddd;
+}
+
+.kanban-columns {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+}
+
+
+/* Styles for the Card component */
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 14px; /* Reducing padding by 30% */
+  margin-bottom: 14px; /* Adjust margin as needed */
+  font-size: 14px; 
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-details {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-priority {
+  font-weight: bold;
+}
+
+.card-actions {
+  margin-top: 10px;
+}
+
+/* Example styling for action buttons */
+.card-actions button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-actions button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Circle styling */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Circle color */
+  /* Other styles for the circle */
+}
+
+.card-priority-urgent::after {
+  background-color: #ff0000; /* Red for urgent */
+}
+
+.card-priority-high::after {
+  background-color: #ffa500; /* Orange for high */
+}
+
+.card-priority-medium::after {
+  background-color: #ffff00; /* Yellow for medium */
+}
+
+.card-priority-low::after {
+  background-color: #00ff00; /* Green for low */
+}
+
+.card-priority-none::after {
+  background-color: #808080; /* Grey for no priority */
 }
